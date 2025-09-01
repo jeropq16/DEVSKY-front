@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMA - Bienvenido</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    
+    <style>
+        body.welcome-bg {
+            background: linear-gradient(135deg, #003366 0%, #00bfff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Rajdhani', Arial, sans-serif;
+        }
+        .welcome-container {
+            background: rgba(255,255,255,0.95);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            padding: 48px 36px 36px 36px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 340px;
+        }
+        .welcome-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .welcome-logo svg {
+            margin-bottom: 10px;
+        }
+        .welcome-logo h1 {
+            font-family: 'Orbitron', Arial, sans-serif;
+            font-size: 2.5rem;
+            color: #003366;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        .welcome-logo p {
+            font-family: 'Rajdhani', Arial, sans-serif;
+            font-size: 1.1rem;
+            color: #00bfff;
+            margin: 0;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .welcome-btn {
+            background: linear-gradient(90deg, #003366 60%, #00bfff 100%);
+            color: #fff;
+            font-family: 'Rajdhani', Arial, sans-serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 36px;
+            margin-top: 18px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .welcome-btn:hover {
+            background: linear-gradient(90deg, #005fa3 60%, #00bfff 100%);
+            transform: translateY(-2px) scale(1.04);
+        }
+    </style>
+    <!-- Socket.IO client -->
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <!-- Notificaciones y PDF -->
+    <script src="js/notificaciones.js"></script>
+    <script src="js/pdf.js"></script>
+</head>
+<body class="welcome-bg">
+    <div class="welcome-container">
+        <div class="welcome-logo">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <polygon points="30,5 55,55 30,45 5,55" fill="#00bfff" stroke="#003366" stroke-width="2"/>
+                <rect x="27" y="20" width="6" height="20" fill="#003366"/>
+            </svg>
+            <h1>GMA</h1>
+            <p>Gestión de Mantenimiento Aeronáutico</p>
+        </div>
+        <button onclick="window.location.href='login.html'" class="welcome-btn">Ingresar</button>
+        <!-- Lista de notificaciones -->
+        <ul id="notificaciones" style="margin-top:24px;"></ul>
+        <!-- Ejemplo de botón para descargar PDF (puedes moverlo a otra vista) -->
+        <!-- <button onclick="descargarPDF(1)">Descargar PDF de ejemplo</button> -->
+    </div>
+  <script src="/socket.io/socket.io.js"></script></body>
+</html>

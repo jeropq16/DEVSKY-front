@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMA - Panel Piloto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="js/notificaciones.js"></script>
+    <script src="js/pdf.js"></script>
+</head>
+<body class="piloto-bg">
+    <header class="main-header">
+        <div class="logo-title">
+            <svg width="38" height="38" viewBox="0 0 60 60" fill="none">
+                <polygon points="30,5 55,55 30,45 5,55" fill="#00bfff" stroke="#003366" stroke-width="2"/>
+                <rect x="27" y="20" width="6" height="20" fill="#003366"/>
+            </svg>
+            <span>GMA - Piloto</span>
+        </div>
+        <button class="logout-btn" onclick="window.location.href='login.html'">Cerrar sesión</button>
+    </header>
+    <main class="piloto-main">
+        <section class="panel panel-reporte">
+            <h2>Reporte de Vuelo</h2>
+            <form id="reportePilotoForm">
+                <label>Matrícula de la aeronave</label>
+                <input type="text" id="matricula" name="matricula" required autocomplete="off">
+                <div id="datosAeronave" style="font-size:0.95em; margin-bottom:10px;"></div>
+                <label>Horas de vuelo totales</label>
+                <input type="number" id="horas_vuelo" name="horas_vuelo" required min="1">
+                <label>Trayecto: salida</label>
+                <input type="text" id="trayecto_salida" name="trayecto_salida" required>
+                <label>Trayecto: llegada</label>
+                <input type="text" id="trayecto_llegada" name="trayecto_llegada" required>
+                <label>Fecha</label>
+                <input type="date" id="fecha" name="fecha" required>
+                <label>Reporte del piloto</label>
+                <textarea id="reporte" name="reporte" required></textarea>
+                <label>Acción correctiva</label>
+                <textarea id="accion_correctiva" name="accion_correctiva"></textarea>
+                <label>Firma del piloto</label>
+                <input type="text" id="firma_piloto" name="firma_piloto" required placeholder="Nombre y apellido">
+                <button type="submit">Enviar reporte</button>
+                <div id="msgReporte" style="margin-top:8px;"></div>
+            </form>
+        </section>
+        <section class="panel panel-notificaciones">
+            <h2>Notificaciones</h2>
+            <ul id="notificaciones"></ul>
+        </section>
+        <!-- Ejemplo de botón para descargar PDF -->
+        <!-- <button onclick="descargarPDF(1)">Descargar PDF de ejemplo</button> -->
+    </main>
+  <script src="/socket.io/socket.io.js"></script></body>
+</html>
+<script src="js/piloto.js"></script>

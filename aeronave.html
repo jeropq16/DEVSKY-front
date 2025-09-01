@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Aeronaves</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f9fafb;
+      color: #111827;
+    }
+    h1 {
+      text-align: center;
+      color: #1e3a8a;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #d1d5db;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #1e40af;
+      color: white;
+    }
+    .btn {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .btn-edit {
+      background-color: #2563eb;
+      color: white;
+    }
+    .btn-delete {
+      background-color: #dc2626;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gestión de Aeronaves</h1>
+  
+  <table id="aeronave-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Matrícula</th>
+        <th>Modelo</th>
+        <th>Marca</th>
+        <th>Año</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Las aeronaves se cargarán aquí con JS -->
+    </tbody>
+  </table>
+
+  <!-- Importamos el JS -->
+  <script src="./js/aeronave.js"></script>
+  <script src="/socket.io/socket.io.js"></script></body>
+</html>

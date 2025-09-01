@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GMA - Panel Certificador</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="js/notificaciones.js"></script>
+  <script src="js/pdf.js"></script>
+</head>
+<body class="certificador-bg">
+  <header class="main-header">
+    <div class="logo-title">
+      <svg width="38" height="38" viewBox="0 0 60 60" fill="none">
+        <polygon points="30,5 55,55 30,45 5,55" fill="#00bfff" stroke="#003366" stroke-width="2"/>
+        <rect x="27" y="20" width="6" height="20" fill="#003366"/>
+      </svg>
+      <span>GMA - Certificador</span>
+    </div>
+    <button class="logout-btn" onclick="window.location.href='login.html'">Cerrar sesión</button>
+  </header>
+
+  <main class="certificador-main">
+    <!-- 📌 SECCIÓN 1: Ítems del certificador -->
+    <section class="panel panel-certificador">
+      <h2>Mis ítems asignados</h2>
+      <div id="misTareasList"></div>
+      <div id="msgFirma" class="mensaje"></div>
+
+      <h3>Firma digital de ítem</h3>
+      <canvas id="firmaCanvas" width="300" height="100" style="border:1px solid #ccc;"></canvas>
+      <br>
+      <button onclick="guardarFirma()">Firmar ítem</button>
+      <button onclick="signaturePad && signaturePad.clear()">Limpiar</button>
+      <img id="firmaImg" style="display:none; margin-top:10px; border:1px solid #ccc;"/>
+    </section>
+
+    <!-- 📌 SECCIÓN 2: Gestión de tareas (funciones de inspector) -->
+    <section class="panel panel-inspector">
+      <h2>Gestión de Tareas</h2>
+
+      <!-- Listado de tareas -->
+      <div id="tareasList"></div>
+
+      <!-- Formulario para asignar tarea -->
+      <form id="asignarForm" class="form-tarea">
+        <h3>Asignar nueva tarea</h3>
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" name="descripcion" required />
+
+        <label for="tecnico">Técnico:</label>
+        <select id="tecnico" name="tecnico"></select>
+
+        <button type="submit">Asignar tarea</button>
+      </form>
+      <div id="asignarMsg" class="mensaje"></div>
+    </section>
+
+    <!-- 📌 SECCIÓN 3: Notificaciones -->
+    <section class="panel panel-notificaciones">
+      <h2>Notificaciones</h2>
+      <ul id="notificaciones"></ul>
+    </section>
+  </main>
+
+  <!-- Librerías necesarias -->
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.6/dist/signature_pad.umd.min.js"></script>
+  <script src="js/firma.js"></script>
+  <script src="js/certificador.js"></script>
+  <script src="/socket.io/socket.io.js"></script></body>
+</html>

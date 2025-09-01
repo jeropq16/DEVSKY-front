@@ -1,0 +1,521 @@
+/* frontend/css/styles.css */
+/*
+  Estilos para GMA - Gestión de Mantenimiento Aeronáutico
+  Temática: Aeronáutica, tecnología, profesionalismo
+  Fuentes: Orbitron y Rajdhani
+  Animaciones y transiciones para una experiencia moderna
+*/
+
+/* ================= LOGIN ================= */
+body.login-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #003366 0%, #00bfff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Rajdhani', Arial, sans-serif;
+  overflow: hidden;
+}
+
+.login-container {
+  background: rgba(255,255,255,0.95);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(0,49,102,0.25);
+  padding: 2.5rem 2rem 2rem 2rem;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: floatIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+  position: relative;
+}
+
+@keyframes floatIn {
+  0% { transform: translateY(-60px) scale(0.9); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.login-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  animation: logoFlyIn 1.2s 0.2s cubic-bezier(.68,-0.55,.27,1.55) both;
+}
+
+@keyframes logoFlyIn {
+  0% { transform: translateY(-40px) scale(0.7) rotate(-10deg); opacity: 0; }
+  100% { transform: translateY(0) scale(1) rotate(0); opacity: 1; }
+}
+
+.login-logo h1 {
+  font-family: 'Orbitron', 'Rajdhani', Arial, sans-serif;
+  font-size: 2.2rem;
+  color: #003366;
+  letter-spacing: 0.15em;
+  margin: 0.2em 0 0 0;
+  text-shadow: 0 2px 8px #00bfff44;
+}
+
+.login-logo p {
+  font-size: 1.05rem;
+  color: #00bfff;
+  margin: 0;
+  letter-spacing: 0.08em;
+  font-family: 'Rajdhani', Arial, sans-serif;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.login-form label {
+  font-family: 'Rajdhani', Arial, sans-serif;
+  color: #003366;
+  font-size: 1.1rem;
+  margin-bottom: 0.1em;
+  letter-spacing: 0.04em;
+}
+
+.login-form input {
+  padding: 0.6em 1em;
+  border: 1.5px solid #00bfff;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-family: 'Rajdhani', Arial, sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+  background: #f7fbff;
+  color: #003366;
+}
+
+.login-form input:focus {
+  border-color: #003366;
+  box-shadow: 0 0 0 2px #00bfff55;
+}
+
+.login-form button {
+  margin-top: 0.7em;
+  padding: 0.7em 0;
+  background: linear-gradient(90deg, #00bfff 60%, #003366 100%);
+  color: #fff;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 1.15rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  box-shadow: 0 2px 8px #00bfff33;
+  transition: background 0.3s, transform 0.2s;
+  will-change: transform;
+}
+
+.login-form button:hover, .login-form button:focus {
+  background: linear-gradient(90deg, #003366 40%, #00bfff 100%);
+  transform: scale(1.04) translateY(-2px) rotate(-1deg);
+  box-shadow: 0 4px 16px #00336633;
+}
+
+.login-error {
+  color: #d32f2f;
+  font-size: 1rem;
+  margin-top: 0.5em;
+  min-height: 1.2em;
+  text-align: center;
+  transition: opacity 0.3s;
+}
+
+/* Detalles decorativos */
+body.login-bg::before, body.login-bg::after {
+  content: '';
+  position: fixed;
+  z-index: 0;
+  border-radius: 50%;
+  opacity: 0.13;
+  pointer-events: none;
+}
+body.login-bg::before {
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, #00bfff 0%, #003366 80%);
+  left: -120px; top: -120px;
+  animation: floatCloud 12s infinite alternate ease-in-out;
+}
+body.login-bg::after {
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, #003366 0%, #00bfff 80%);
+  right: -90px; bottom: -90px;
+  animation: floatCloud 14s infinite alternate-reverse ease-in-out;
+}
+@keyframes floatCloud {
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.08) translateY(30px); }
+}
+
+/* ================= INSPECTOR & TÉCNICO ================= */
+body.inspector-bg, body.tecnico-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #003366 0%, #00bfff 100%);
+  font-family: 'Rajdhani', Arial, sans-serif;
+  margin: 0;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.97);
+  box-shadow: 0 4px 18px #00336622;
+  padding: 0.7em 2em;
+  border-radius: 0 0 18px 18px;
+  margin-bottom: 2em;
+}
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 1.3rem;
+  color: #003366;
+  letter-spacing: 0.08em;
+}
+.logout-btn {
+  background: linear-gradient(90deg, #00bfff 60%, #003366 100%);
+  color: #fff;
+  font-family: 'Rajdhani', Arial, sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5em 1.2em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #00bfff33;
+  transition: background 0.3s, transform 0.2s;
+}
+.logout-btn:hover {
+  background: linear-gradient(90deg, #003366 40%, #00bfff 100%);
+  transform: scale(1.04) translateY(-2px);
+}
+
+.inspector-main, .tecnico-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 2em;
+}
+.panel {
+  background: rgba(255,255,255,0.97);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(0,49,102,0.13);
+  padding: 2em 1.5em 1.5em 1.5em;
+  min-width: 320px;
+  max-width: 420px;
+  flex: 1 1 350px;
+  margin-bottom: 1em;
+  animation: floatIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.panel h2 {
+  font-family: 'Orbitron', Arial, sans-serif;
+  color: #003366;
+  font-size: 1.3rem;
+  margin-bottom: 1em;
+  letter-spacing: 0.08em;
+}
+
+/* ... aquí siguen los estilos de tareas, formularios y responsive que ya tienes ... */
+
+/* ================= BIENVENIDA ================= */
+body.welcome-bg {
+  background: linear-gradient(135deg, #003366 0%, #00bfff 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Rajdhani', Arial, sans-serif;
+}
+.welcome-container {
+  background: rgba(255,255,255,0.95);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 48px 36px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 340px;
+}
+.welcome-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.welcome-logo h1 {
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 2.5rem;
+  color: #003366;
+  margin: 0;
+  letter-spacing: 2px;
+}
+.welcome-logo p {
+  font-family: 'Rajdhani', Arial, sans-serif;
+  font-size: 1.1rem;
+  color: #00bfff;
+  margin: 0;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.welcome-btn {
+  background: linear-gradient(90deg, #003366 60%, #00bfff 100%);
+  color: #fff;
+  font-family: 'Rajdhani', Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 36px;
+  margin-top: 18px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.welcome-btn:hover {
+  background: linear-gradient(90deg, #005fa3 60%, #00bfff 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* ================= PILOTO ================= */
+body.piloto-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #001f3f 0%, #00bfff 100%);
+  font-family: 'Rajdhani', Arial, sans-serif;
+  margin: 0;
+}
+
+.piloto-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 2em;
+}
+
+/* Paneles piloto */
+.piloto-main .panel {
+  max-width: 450px;
+}
+.piloto-main .panel h2 {
+  font-size: 1.4rem;
+}
+
+/* Formulario de reporte piloto */
+#reportePilotoForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+}
+#reportePilotoForm label {
+  font-family: 'Rajdhani', Arial, sans-serif;
+  color: #003366;
+  font-size: 1.05rem;
+}
+#reportePilotoForm input, 
+#reportePilotoForm textarea {
+  padding: 0.6em 0.8em;
+  border: 1.5px solid #00bfff;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-family: 'Rajdhani', Arial, sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+  background: #f7fbff;
+  color: #003366;
+}
+#reportePilotoForm input:focus, 
+#reportePilotoForm textarea:focus {
+  border-color: #003366;
+  box-shadow: 0 0 0 2px #00bfff55;
+}
+#reportePilotoForm button {
+  margin-top: 0.8em;
+  padding: 0.8em 0;
+  background: linear-gradient(90deg, #00bfff 60%, #003366 100%);
+  color: #fff;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  box-shadow: 0 2px 8px #00bfff33;
+  transition: background 0.3s, transform 0.2s;
+}
+#reportePilotoForm button:hover {
+  background: linear-gradient(90deg, #003366 40%, #00bfff 100%);
+  transform: scale(1.04) translateY(-2px);
+}
+#msgReporte {
+  font-size: 0.95em;
+  color: #009966;
+  font-weight: 500;
+  min-height: 1.2em;
+  text-align: center;
+}
+
+/* Panel de notificaciones */
+.panel-notificaciones ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.panel-notificaciones li {
+  background: #f7fbff;
+  border-radius: 10px;
+  padding: 0.7em 1em;
+  margin-bottom: 0.7em;
+  box-shadow: 0 2px 8px #00bfff22;
+  font-size: 1rem;
+  color: #003366;
+  border-left: 4px solid #00bfff;
+  transition: transform 0.2s;
+}
+.panel-notificaciones li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px #00336633;
+}
+
+/* ================= CERTIFICADOR ================= */
+body.certificador-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #001f3f 0%, #00bfff 100%);
+  font-family: 'Rajdhani', Arial, sans-serif;
+  margin: 0;
+}
+
+.certificador-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 2em;
+}
+
+/* Paneles del certificador */
+.panel-certificador, 
+.panel-inspector, 
+.panel-notificaciones {
+  background: rgba(255,255,255,0.97);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(0,49,102,0.15);
+  padding: 2em 1.5em 1.5em 1.5em;
+  min-width: 320px;
+  max-width: 450px;
+  flex: 1 1 360px;
+  margin-bottom: 1em;
+  animation: floatIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+.panel-certificador h2,
+.panel-inspector h2,
+.panel-notificaciones h2 {
+  font-family: 'Orbitron', Arial, sans-serif;
+  color: #003366;
+  font-size: 1.35rem;
+  margin-bottom: 1em;
+  letter-spacing: 0.08em;
+}
+
+/* Lista de tareas */
+#misTareasList, #tareasList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  margin-bottom: 1em;
+}
+#misTareasList div, 
+#tareasList div {
+  background: #f7fbff;
+  padding: 0.8em 1em;
+  border-radius: 10px;
+  border-left: 4px solid #00bfff;
+  box-shadow: 0 2px 8px #00336622;
+  font-size: 1rem;
+  color: #003366;
+  transition: transform 0.2s;
+}
+#misTareasList div:hover, 
+#tareasList div:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px #00336633;
+}
+
+/* Formulario de asignación */
+.form-tarea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+}
+.form-tarea label {
+  font-family: 'Rajdhani', Arial, sans-serif;
+  color: #003366;
+  font-size: 1.05rem;
+}
+.form-tarea input, .form-tarea select {
+  padding: 0.6em 0.8em;
+  border: 1.5px solid #00bfff;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Rajdhani', Arial, sans-serif;
+  background: #f7fbff;
+  color: #003366;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-tarea input:focus, .form-tarea select:focus {
+  border-color: #003366;
+  box-shadow: 0 0 0 2px #00bfff55;
+}
+.form-tarea button {
+  margin-top: 0.6em;
+  padding: 0.7em 0;
+  background: linear-gradient(90deg, #00bfff 60%, #003366 100%);
+  color: #fff;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  box-shadow: 0 2px 8px #00bfff33;
+  transition: background 0.3s, transform 0.2s;
+}
+.form-tarea button:hover {
+  background: linear-gradient(90deg, #003366 40%, #00bfff 100%);
+  transform: scale(1.04) translateY(-2px);
+}
+
+/* Mensajes */
+.mensaje {
+  font-size: 0.95em;
+  margin-top: 0.5em;
+  min-height: 1.2em;
+  text-align: center;
+  color: #009966;
+  font-weight: 500;
+}
+
+/* Responsive piloto */
+@media (max-width: 900px) {
+  .piloto-main {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1em;
+  }
+  .piloto-main .panel {
+    min-width: 0;
+    max-width: 98vw;
+  }
+}
