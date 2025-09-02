@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     misTareasList.innerHTML = '<div class="cargando">Cargando ítems...';
     try {
       // Endpoint sugerido: /api/ordenes/tecnico/:id
-      const resp = await fetch(`http://localhost:3000/api/ordenes/tecnico/${tecnicoId}`);
+      const resp = await fetch(`https://devsky-back.vercel.app/api/ordenes/tecnico/${tecnicoId}`);
       const data = await resp.json();
       if (data && data.success && Array.isArray(data.items)) {
         if (!data.items.length) {

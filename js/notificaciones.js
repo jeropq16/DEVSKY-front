@@ -1,6 +1,6 @@
 /// frontend/js/notificaciones.js
 // Conexión a WebSocket para recibir notificaciones en tiempo real
-const socket = io("http://localhost:3000");
+const socket = io("https://devsky-back.vercel.app");
 
 // Escuchar notificaciones y mostrarlas en la UI
 socket.on("notificacion", (data) => {

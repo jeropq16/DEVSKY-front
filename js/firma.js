@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     msgFirma.textContent = 'Guardando firma...';
     
     try {
-      const response = await fetch(`http://localhost:3000/api/ordenes/firma/${itemId}`, {
+      const response = await fetch(`https://devsky-back.vercel.app/api/ordenes/firma/${itemId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

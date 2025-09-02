@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function cargarMisItems() {
     tareasList.innerHTML = '<div class="cargando">Cargando ítems...</div>';
     try {
-      const resp = await fetch(`http://localhost:3000/api/ordenes/certificador/${certificadorId}`);
+      const resp = await fetch(`https://devsky-back.vercel.app/api/ordenes/certificador/${certificadorId}`);
       const data = await resp.json();
       if (data && data.success && Array.isArray(data.items)) {
         if (!data.items.length) {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Cargar técnicos disponibles
   async function cargarTecnicos() {
     try {
-      const resp = await fetch('http://localhost:3000/api/usuarios/tecnicos');
+      const resp = await fetch('https://devsky-back.vercel.app/api/usuarios/tecnicos');
       const data = await resp.json();
       
       tecnicoSelect.innerHTML = '';
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!globalTareasList) return;
     globalTareasList.innerHTML = '<div class="cargando">Cargando tareas...</div>';
     try {
-      const resp = await fetch('http://localhost:3000/api/tareas');
+      const resp = await fetch('https://devsky-back.vercel.app/api/tareas');
       const data = await resp.json();
       if (data && data.success && Array.isArray(data.tareas)) {
         if (!data.tareas.length) {
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
       asignarMsg.textContent = 'Asignando tarea...';
       
       try {
-        const resp = await fetch('http://localhost:3000/api/tareas', {
+        const resp = await fetch('https://devsky-back.vercel.app/api/tareas', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ descripcion, id_tecnico_asignado })

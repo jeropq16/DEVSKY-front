@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function cargarAeronaves() {
     contenedor.innerHTML = '<div class="cargando">Cargando aeronaves...</div>';
     try {
-      const resp = await fetch('http://localhost:3000/api/aeronaves');
+      const resp = await fetch('https://devsky-back.vercel.app/api/aeronaves');
       const data = await resp.json();
       if (data && data.success && Array.isArray(data.aeronaves)) {
         if (!data.aeronaves.length) {
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             msg.textContent = ' Guardando...';
             try {
-              const resp = await fetch(`http://localhost:3000/api/aeronaves/${aeronaveId}/horas`, {
+              const resp = await fetch(`https://devsky-back.vercel.app/api/aeronaves/${aeronaveId}/horas`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ horas })

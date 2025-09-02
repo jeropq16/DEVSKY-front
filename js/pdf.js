@@ -7,7 +7,7 @@ function descargarPDF(ordenId) {
     return;
   }
   
-  const url = `http://localhost:3000/api/pdf/orden/${ordenId}`;
+  const url = `https://devsky-back.vercel.app/api/pdf/orden/${ordenId}`;
   const link = document.createElement('a');
   link.href = url;
   link.download = `orden_${ordenId}.pdf`;

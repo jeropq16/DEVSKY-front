@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/api/ordenes/generar', {
+      const response = await fetch('https://devsky-back.vercel.app/api/ordenes/generar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contenedor.innerHTML = '<div class="cargando">Cargando órdenes...</div>';
 
     try {
-      const response = await fetch('http://localhost:3000/api/ordenes');
+      const response = await fetch('https://devsky-back.vercel.app/api/ordenes');
       const data = await response.json();
 
       if (data.success && Array.isArray(data.ordenes)) {

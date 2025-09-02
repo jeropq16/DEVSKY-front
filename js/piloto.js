@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!matricula) return;
     datosAeronaveDiv.textContent = 'Buscando datos...';
     try {
-      const resp = await fetch('http://localhost:3000/api/aeronaves');
+      const resp = await fetch('https://devsky-back.vercel.app/api/aeronaves');
       const data = await resp.json();
       if (data && data.success && Array.isArray(data.aeronaves)) {
         const aero = data.aeronaves.find(a => a.matricula.toLowerCase() === matricula.toLowerCase());
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Buscar id de aeronave por matrícula
     let aeronave_id = null;
     try {
-      const resp = await fetch('http://localhost:3000/api/aeronaves');
+      const resp = await fetch('https://devsky-back.vercel.app/api/aeronaves');
       const data = await resp.json();
       if (data && data.success && Array.isArray(data.aeronaves)) {
         const aero = data.aeronaves.find(a => a.matricula.toLowerCase() === matricula.toLowerCase());
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const resp = await fetch('http://localhost:3000/api/reportes', {
+      const resp = await fetch('https://devsky-back.vercel.app/api/reportes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
